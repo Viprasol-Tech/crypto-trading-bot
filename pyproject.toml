@@ -4,8 +4,8 @@ build-backend = "hatchling.build"
 
 [project]
 name = "crypto-trading-bot"
-version = "0.1.0"
-description = "Multi-exchange cryptocurrency trading bot with grid, DCA and momentum strategies — by Viprasol Tech."
+version = "0.2.0"
+description = "Multi-exchange cryptocurrency trading bot with grid, DCA, momentum, mean-reversion and breakout strategies, a portfolio tracker and a backtest engine — by Viprasol Tech."
 readme = "README.md"
 requires-python = ">=3.11"
 license = { text = "MIT" }
@@ -16,6 +16,10 @@ keywords = [
   "trading-bot",
   "grid-trading",
   "dca",
+  "momentum",
+  "mean-reversion",
+  "breakout",
+  "backtesting",
   "automated-trading",
   "bitcoin",
 ]
