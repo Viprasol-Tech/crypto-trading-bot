@@ -81,8 +81,8 @@ Buy & hold baseline: +108.94%
 from crypto_trading_bot import CostModel, build_strategy, run_backtest
 from crypto_trading_bot.data import trending
 
-prices = trending(n=300, seed=7)                       # deterministic synthetic series
-costs = CostModel(fee_rate=0.001, slippage_bps=5.0)    # 0.1% fee + 0.05% slippage
+prices = trending(n=300, seed=7)  # deterministic synthetic series
+costs = CostModel(fee_rate=0.001, slippage_bps=5.0)  # 0.1% fee + 0.05% slippage
 
 report = run_backtest(build_strategy("momentum"), prices, cash=10_000, cost_model=costs)
 
@@ -90,7 +90,7 @@ print(f"return   {report.total_return:.2%}")
 print(f"alpha    {report.alpha:.2%} vs buy-and-hold")
 print(f"drawdown {report.max_drawdown:.2%}")
 print(f"sharpe   {report.sharpe:.2f}")
-print(report.as_dict())   # flat dict, ready for JSON/CSV export
+print(report.as_dict())  # flat dict, ready for JSON/CSV export
 ```
 
 ### Write your own strategy
@@ -98,6 +98,7 @@ print(report.as_dict())   # flat dict, ready for JSON/CSV export
 ```python
 from crypto_trading_bot.strategies.base import Strategy
 from crypto_trading_bot.models import Order, Side
+
 
 class BuyTheDip(Strategy):
     name = "buy_the_dip"
